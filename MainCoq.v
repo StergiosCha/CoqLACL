@@ -9,7 +9,7 @@ Inductive vector (A : Type) : nat -> Type :=
 Notation "a :: b" := (Vcons  a b).
 Definition CN:= Set.
                 (** Common Nouns as Types *)
-                 Parameter Bank Manager Accountant Car Meeting HumanTypes City Nobel_Prize Distance Mammal report student diamond delegate Location Time Duration Mouse survey Swede Scandinavian Contract Door Window Institution Phy Info factory Woman Man Object President Surgeon Animal Human:CN.
+                 Parameter Bank Manager Accountant Car Meeting HumanTypes City Nobel_Prize Distance Mammal Report Student Diamond Delegate Location Time Duration Mouse Survey Swede Scandinavian Contract Door Window Institution Phy Info Factory Woman Man Object President Surgeon Animal Human:CN.
       (* *Book as a Sigma Type encoding Pustejovsky's qualias structure. The first projection is coerction, thus Book is a subtype of phy.info The and dot*)
 Record PhyInfo : CN := mkPhyInfo { phy :> Phy; info :> Info }.
 (* Book as Sigma-type with PhyInfo & BookQualia *)
@@ -23,7 +23,7 @@ Agent : exists h:Human, W h A }.
 Record Book : Set := mkBook { Arg :> PhyInfo; Qualia : BookQualia Arg }.
 
      (** Subtyping relations. Coercion ensures that in every situation *)
-Axiom do: diamond->Object. Coercion do: diamond >-> Object.
+Axiom do: Diamond->Object. Coercion do: Diamond >-> Object.
 Axiom ph1: President->HumanTypes. Coercion ph1: President>->HumanTypes.
 Axiom hh1: HumanTypes->Human. Coercion hh1: HumanTypes>->Human.
 Axiom sw: Surgeon -> Human. Coercion sw: Surgeon >-> Human.

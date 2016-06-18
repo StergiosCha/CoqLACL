@@ -5,6 +5,8 @@ MainCoq.v: This is the main file that includes a number of ideas developed using
 
 adjectives.v: Some ideas on multidimensional adjectives and the sigma type treatment (via dependent records) of intersective adjectives
 
+CN_predhyp.v: Contains ideas proposals solutions along with proofs associated with issues that arise if one takes the common nouns as types view. Predicational, hypothetical and negated sentences are taking care of. 
+
 FraCasCoq.v: This includes a number of proofs for a number of examples from the FraCas.
 
 test.v: This is a file quite close to MainCoq.v with the addition of some automated tactics to be used with FraCasCoq.v

@@ -1,3 +1,4 @@
+
 (** Retore's 2013 toy semantic grammar including multi-sortedness and coercions to handle co-predication*)
 Load LibTactics.
 Ltac AUTO:= cbv delta;intuition;try repeat congruence;  jauto;intuition.

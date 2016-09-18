@@ -167,13 +167,7 @@ Definition respectively :=fun (n : nat) (u : vector Human (n + 2))( v: vector (H
 Definition last_year:= fun P : Time -> Prop => exists m : nat, exists n : nat, P (DATE (default_y - 1) m n) /\ m <= 30 /\ 7 <= n.
 Ltac AUTO:= cbv delta;intuition;try repeat congruence;  jauto;intuition.
 Definition NOW:= fun m: nat=> fun n:nat=> fun l:nat=> default_t = DATE m n l /\ default_y = m /\ default_m = n /\ default_d = l.
-Ltac AUTOS :=fun H H0 H1 H2 H3 H4 x y z =>try exists x; try exists x; intuition;try repeat congruence; try destruct H; try destruct H0;try destruct H1; try destruct H2; try destruct H3;try destruct H4; try induction H with y z; try induction H0 with y z;try induction H1 with z y; try induction H2 with y z; try induction H3 with y z; try induction H4 with z y; try destruct ADV; jauto; intuition; repeat AUTO; repeat AUTO.
-Ltac AUTO1a  x y z i j :=cbv; try destruct x; try destruct y;try destruct z;intro; try destruct i; try destruct i with j;AUTO.
-Ltac AUTO1  x y z i j g h := cbv;try destruct x;try intro; try destruct y; try destruct z;try case i with j g;try case i with j g h; AUTO;  try eapply g; try omega; try case i with j; try case g with h; try apply y with z; AUTO; AUTO; intuition; try repeat congruence; jauto;intuition.
-Ltac AUTO2  x y z i j g :=try unfold x; try unfold y; try unfold z; try destruct x; try destruct y;try destruct z; try eapply g; try omega; try case i with j g; AUTO; AUTO;cbv delta; intuition; try repeat congruence; jauto;intuition. 
-Ltac AUTO3  a b c d e f g h i:=solve [ AUTO1 a b c d e f g |AUTO| AUTO2 a b d e f|AUTOS a b c d e f g h i]. 
-Ltac AUTO4 a b c d e f g h i :=solve[ AUTO1 a b c d e f g| AUTO2 a b c d e f | AUTO ].
-Ltac AUTO5 a b c d e f g h i :=solve[AUTO1a a b c d e| AUTO1 a b c d e f g| AUTO2 a b c d e f | AUTO ]. 
-Ltac AUTOa  x i:= cbv;try destruct x;try intro;try ecase i;  AUTO;  try eapply i; try omega; AUTO; intuition; try repeat congruence; jauto;intuition.
-Ltac GAUTO:= solve[AUTO|AUTOa].
-Require Import  mathcomp.ssreflect.ssreflect.
+
+Ltac AUTOa  x i g:= cbv;try exists x;try destruct x as (A,B);try destruct x as (A);try apply i; try apply g;try intro;try ecase i;  AUTO;  try eapply i;try ecase g; AUTO; try eapply g; try omega; AUTO; intuition; try repeat congruence; jauto;intuition.
+Ltac GAUTO x i g:= try  solve[AUTO]; try solve [AUTOa x i g].
+ 

@@ -16,8 +16,7 @@ CoInductive  Run(X:IND):={ e: run X.(x1) ;}.
 Check Run.
 (**Defining John and Mary as being of type IND**)
 Parameter John Mary:IND. 
-Check Run Joh
-      n.
+Check Run John.
 Theorem RUN: Run John -> exists x: Ind, run x.  cbv. intro.
                                                 decompose record John. decompose record H. exists x2. Undo.   exists (x1 John). apply e0. Qed.
 

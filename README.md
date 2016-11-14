@@ -1,5 +1,5 @@
 # CoqLACL
-This repository contains Coq files implementing type theoretical semantics for a number of natural language phenomena in Coq. The files have been compiled using Coq 8.5. The files are as follows:
+This repository contains Coq files implementing type theoretical semantics for a number of natural language phenomena in Coq. The files have been compiled using Coq 8.5. The files are as follow:
 
 MainCoq.v: This is the main file that includes a number of ideas developed using Luo's TTCS for natural language semantics. It includes the CNs as types idea, subtyping, Pustejovsky's book example formalized as a record type, dot.types, quantifiers, comparatatives and a simple model of tense among other things
 

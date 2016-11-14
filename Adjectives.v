@@ -1,5 +1,7 @@
 Require Import Reals.
-Load Clean_inference.
+Load MainCoq.
+Parameter delegate:CN.
+Axiom do1: delegate->Object. Coercion do1: delegate>->Object.
 (** Dealing with multidimensional adjectives. Health as an inductive type where the dimensions are enumerated. This is just an enumerated type*)
 Inductive Health: CN:= Heart|Blood|Cholesterol.
 Parameter Degree:R.
